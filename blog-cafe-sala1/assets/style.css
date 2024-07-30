@@ -1,0 +1,162 @@
+/* variables de colores a usar */
+:root{
+    --color-primario:#000;
+    --color-secundario: #7e4415;
+    --blanco:#FFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* colocar los elementos del titulo y del nav esquinados */
+.primero{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: .6rem;
+    
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+
+}
+
+.seccion-principal{
+    background-image: url("../imagenes/banner.jpg"); 
+    width: 100%;
+    height: 500px;
+    background-size: cover; 
+    background-position: bottom; 
+    padding: 2% 5%;
+    color: var(--blanco);
+    /* para poder alinear al centro el  texto del header,
+    se coloca posicion relativa en el contenedor padre y absoluta en el hijo*/
+    position: relative;
+}
+
+/* aqui alineamos la seccion que contiene el texto del header */
+.header-parte2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* usamos css grid para dividirlo en 2 columnas */
+.grid-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1.5rem;
+}
+
+.art-images{
+    position: relative;
+    flex: 0 0 400px; 
+}
+
+.art-images img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.caja{
+    width: 90%;
+    margin: .5% auto 4%;
+}
+
+.btn{
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    padding: .6rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .8rem;
+    flex-flow: wrap;
+    border: none;
+}
+
+hr {
+    /* Elimina el borde por defecto */
+    border: 0;
+    /* Ajusta el grosor de la línea */
+    height: 1px;
+    /* Color con opacidad */
+    background: rgba(0, 0, 0, 0.2);
+    /* Espacio arriba y abajo */
+    margin: 15px 0;
+}
+
+.label-cursos{
+text-align: center;
+font-weight: bold;
+margin: 1rem;
+}
+
+/* css grid para los proximos cursos y talleres */
+.contenedor-cursos{
+    display: grid;
+    /* Crea 4 columnas iguales */
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 20% 50% 15% 15%;
+    /* Ajusta el ancho al contenedor */
+    width: 100%; 
+    height: 200px;
+}
+
+.contenedor-cursos > div{
+    padding: 10px;
+    text-align: left;
+    /* Borde de las celdas */
+    border-bottom: 1px solid #ccc;
+}
+
+.encabezado {
+    background-color: var(--color-secundario);
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+/* ajustar la imagen al tamaño del contenedor */
+.img-cursos{
+    position: relative;
+    flex: 0 0 200px;
+}
+.img-cursos img{
+    max-width: 100%;
+    height: 100px;
+    object-fit: cover;
+    padding: 0 1.5rem;
+}
+
+footer{
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    padding: 1rem;
+}
+
+/* media query */
+
+@media(max-width: 576px){
+
+    .grid-container{
+        display: block;
+    }
+
+    .contenedor-cursos{
+        display: block;
+    }
+
+    .h2{
+        font-size: .8rem;
+    }
+}
